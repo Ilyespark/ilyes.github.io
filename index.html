@@ -771,6 +771,47 @@
             color: var(--accent);
         }
 
+        /* Modal Buttons Area */
+        .modal-buttons-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .modal-btn-doc {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--accent-subtle);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .modal-btn-doc:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+        }
+
+        .modal-btn-doc.primary {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border: none;
+        }
+        
+        .modal-btn-doc.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.1);
+        }
+
         /* Modal footer */
         .modal-footer {
             padding: 20px 40px 40px;
@@ -1235,7 +1276,6 @@
                 </p>
             </div>
             <div class="timeline">
-                
                 <!-- FUTUR EN PREMIER -->
                 <div class="timeline-item">
                     <div class="timeline-date">2026 (objectif)</div>
@@ -1253,7 +1293,6 @@
                         <span class="tag">Cloud</span>
                     </div>
                 </div>
-
                 <!-- BTS EN COURS -->
                 <div class="timeline-item">
                     <div class="timeline-date">2024 — 2026</div>
@@ -1274,7 +1313,6 @@
                         <span class="tag">Sécurité</span>
                     </div>
                 </div>
-
                 <!-- BAC STMG -->
                 <div class="timeline-item">
                     <div class="timeline-date">2023 — 2024</div>
@@ -1292,7 +1330,6 @@
                         <span class="tag">Systèmes d'information</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1310,7 +1347,99 @@
             </div>
             <div class="projects-grid">
 
-                <!-- PROJET 1 : OCS / GLPI -->
+                <!-- PROJET 1 : SITE SAVORYCRAFT (RP 1.1) -->
+                <div class="project-card" style="grid-column: 1 / -1;">
+                    <div class="project-header">
+                        <div class="project-accent" style="background: var(--gradient-2);"></div>
+                        <div class="project-context">Projet web — E5</div>
+                        <div class="project-title">RP 1.1 - Site HTML "Publicité" (SavoryCraft)</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            Création d'un site web (HTML et CSS) avec intégration d'espaces publicitaires. 
+                            Travail sur la structure sémantique, le responsive et l'accessibilité.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-detail-row">
+                                <span class="project-detail-label">Date</span>
+                                <span class="project-detail-value">12/09/2024 — 07/11/2024</span>
+                            </div>
+                            <div class="project-detail-row">
+                                <span class="project-detail-label">Lieu</span>
+                                <span class="project-detail-value">Lycée</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-details" onclick="openProjectModal('site-html-pub')">
+                                🔍 Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 2 : CONFIGURATION POSTES (STAGE 1) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-accent" style="background: var(--gradient-4);"></div>
+                        <div class="project-context">Stage 1ère année</div>
+                        <div class="project-title">Configuration des postes de travail</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            Installation et paramétrage des logiciels essentiels, notamment la messagerie 
+                            (Outlook avec protocoles SMTP/IMAP), pour un accès opérationnel aux services.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-detail-row">
+                                <span class="project-detail-label">Date</span>
+                                <span class="project-detail-value">19/05/2025 — 27/06/2025</span>
+                            </div>
+                            <div class="project-detail-row">
+                                <span class="project-detail-label">Lieu</span>
+                                <span class="project-detail-value">Stage entreprise</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-details" onclick="openProjectModal('config-postes')">
+                                🔍 Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 3 : LINUX (STAGE 2) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-accent" style="background: var(--gradient-5);"></div>
+                        <div class="project-context">Stage 2ème année</div>
+                        <div class="project-title">Évaluation distributions Linux pour entreprise</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            Étude et test de plusieurs distributions Linux pour identifier celle pouvant 
+                            remplacer Windows dans l'environnement de l'entreprise. Compatibilité, virtualisation, 
+                            alternatives Microsoft, agents de sécurité.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-detail-row">
+                                <span class="project-detail-label">Date</span>
+                                <span class="project-detail-value">23/02/2026 — 03/04/2026</span>
+                            </div>
+                            <div class="project-detail-row">
+                                <span class="project-detail-label">Lieu</span>
+                                <span class="project-detail-value">Stage entreprise</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-details" onclick="openProjectModal('linux-entreprise')">
+                                🔍 Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AUTRES PROJETS (Conservés pour le portfolio) -->
+                <!-- PROJET 4 : OCS / GLPI -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-1);"></div>
@@ -1341,7 +1470,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 2 : ACTIVE DIRECTORY -->
+                <!-- PROJET 5 : ACTIVE DIRECTORY -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-4);"></div>
@@ -1371,7 +1500,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 3 : NAGIOS -->
+                <!-- PROJET 6 : NAGIOS -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-3);"></div>
@@ -1401,7 +1530,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 4 : HAPROXY -->
+                <!-- PROJET 7 : HAPROXY -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-5);"></div>
@@ -1431,7 +1560,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 5 : IPFIRE -->
+                <!-- PROJET 8 : IPFIRE -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-2);"></div>
@@ -1461,7 +1590,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 6 : VLAN / ROUTAGE -->
+                <!-- PROJET 9 : VLAN / ROUTAGE -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-3);"></div>
@@ -1491,7 +1620,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 7 : HSRP -->
+                <!-- PROJET 10 : HSRP -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-4);"></div>
@@ -1521,7 +1650,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 8 : GESTION PARC STAGE -->
+                <!-- PROJET 11 : GESTION PARC STAGE -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-1);"></div>
@@ -1551,7 +1680,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 9 : INVENTAIRE EXCEL -->
+                <!-- PROJET 12 : INVENTAIRE EXCEL -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-2);"></div>
@@ -1581,7 +1710,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 10 : LIGNES MOBILES -->
+                <!-- PROJET 13 : LIGNES MOBILES -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-3);"></div>
@@ -1611,37 +1740,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 11 : CONFIG POSTES -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-accent" style="background: var(--gradient-4);"></div>
-                        <div class="project-context">Stage 1ère année</div>
-                        <div class="project-title">Configuration postes et outils de communication</div>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">
-                            Installation et paramétrage des logiciels essentiels, notamment la messagerie 
-                            (Outlook avec protocoles SMTP/IMAP), pour un accès opérationnel aux services.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-detail-row">
-                                <span class="project-detail-label">Date</span>
-                                <span class="project-detail-value">19/05/2025 — 27/06/2025</span>
-                            </div>
-                            <div class="project-detail-row">
-                                <span class="project-detail-label">Lieu</span>
-                                <span class="project-detail-value">Stage entreprise</span>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <button class="btn-details" onclick="openProjectModal('config-postes')">
-                                🔍 Voir les détails
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 12 : REDONDANCE CISCO -->
+                <!-- PROJET 14 : REDONDANCE CISCO -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-5);"></div>
@@ -1671,7 +1770,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 13 : VEILLE TECHNO -->
+                <!-- PROJET 15 : VEILLE TECHNO -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-6);"></div>
@@ -1701,7 +1800,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 14 : CSS ZEN GARDEN -->
+                <!-- PROJET 16 : CSS ZEN GARDEN -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-1);"></div>
@@ -1731,7 +1830,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 15 : INFRA TeckSio -->
+                <!-- PROJET 17 : INFRA TeckSio -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-3);"></div>
@@ -1761,37 +1860,7 @@
                     </div>
                 </div>
 
-                <!-- PROJET 16 : SITE HTML PUB -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-accent" style="background: var(--gradient-2);"></div>
-                        <div class="project-context">Projet web</div>
-                        <div class="project-title">RP 1.1 - Site HTML "Publicité"</div>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">
-                            Création d'un site web (HTML et CSS) avec intégration d'espaces publicitaires. 
-                            Travail sur la structure sémantique, le responsive et l'accessibilité.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-detail-row">
-                                <span class="project-detail-label">Date</span>
-                                <span class="project-detail-value">12/09/2024 — 07/11/2024</span>
-                            </div>
-                            <div class="project-detail-row">
-                                <span class="project-detail-label">Lieu</span>
-                                <span class="project-detail-value">Lycée</span>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <button class="btn-details" onclick="openProjectModal('site-html-pub')">
-                                🔍 Voir les détails
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 17 : ASSISTANCE PERSONNELS -->
+                <!-- PROJET 18 : ASSISTANCE PERSONNELS -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-accent" style="background: var(--gradient-4);"></div>
@@ -1815,37 +1884,6 @@
                         </div>
                         <div class="project-actions">
                             <button class="btn-details" onclick="openProjectModal('assistance-personnels')">
-                                🔍 Voir les détails
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 18 : LINUX ENTREPRISE -->
-                <div class="project-card" style="grid-column: 1 / -1;">
-                    <div class="project-header">
-                        <div class="project-accent" style="background: var(--gradient-5);"></div>
-                        <div class="project-context">Stage 2ème année</div>
-                        <div class="project-title">Évaluation distributions Linux pour entreprise</div>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">
-                            Étude et test de plusieurs distributions Linux pour identifier celle pouvant 
-                            remplacer Windows dans l'environnement de l'entreprise. Compatibilité, virtualisation, 
-                            alternatives Microsoft, agents de sécurité.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-detail-row">
-                                <span class="project-detail-label">Date</span>
-                                <span class="project-detail-value">23/02/2026 — 03/04/2026</span>
-                            </div>
-                            <div class="project-detail-row">
-                                <span class="project-detail-label">Lieu</span>
-                                <span class="project-detail-value">Stage entreprise</span>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <button class="btn-details" onclick="openProjectModal('linux-entreprise')">
                                 🔍 Voir les détails
                             </button>
                         </div>
@@ -2014,35 +2052,33 @@
                 </p>
             </div>
             <div class="certs-grid">
+                <!-- PIX -->
                 <div class="cert-card fade-in">
                     <div class="cert-icon">🏆</div>
                     <div class="cert-name">Pix Certification</div>
                     <div class="cert-org">Cadre national de référence</div>
                     <span class="cert-status obtained">Obtenue</span>
                 </div>
+                <!-- BASES MATERIEL -->
                 <div class="cert-card fade-in fade-in-delay-1">
-                    <div class="cert-icon">🔐</div>
-                    <div class="cert-name">Cisco CCNA (en cours)</div>
+                    <div class="cert-icon">🖥️</div>
+                    <div class="cert-name">Les bases du matériel informatique</div>
                     <div class="cert-org">Cisco Networking Academy</div>
-                    <span class="cert-status progress">En cours</span>
-                </div>
-                <div class="cert-card fade-in fade-in-delay-2">
-                    <div class="cert-icon">🛡️</div>
-                    <div class="cert-name">SST — Sauveteur Secouriste</div>
-                    <div class="cert-org">Formation professionnelle</div>
                     <span class="cert-status obtained">Obtenue</span>
                 </div>
-                <div class="cert-card fade-in fade-in-delay-3">
-                    <div class="cert-icon">☁️</div>
-                    <div class="cert-name">Microsoft Azure Fundamentals</div>
-                    <div class="cert-org">Microsoft (AZ-900)</div>
-                    <span class="cert-status planned">Prévue</span>
+                <!-- CYBERSECURITY -->
+                <div class="cert-card fade-in fade-in-delay-2">
+                    <div class="cert-icon">🛡️</div>
+                    <div class="cert-name">Introduction à la cybersécurité</div>
+                    <div class="cert-org">Cisco Networking Academy</div>
+                    <span class="cert-status obtained">Obtenue</span>
                 </div>
-                <div class="cert-card fade-in fade-in-delay-4">
-                    <div class="cert-icon">🐧</div>
-                    <div class="cert-name">Linux Essentials</div>
-                    <div class="cert-org">LPI (Linux Professional Institute)</div>
-                    <span class="cert-status planned">Prévue</span>
+                <!-- NETWORKING -->
+                <div class="cert-card fade-in fade-in-delay-3">
+                    <div class="cert-icon">🌐</div>
+                    <div class="cert-name">Principes de base de la mise en réseau</div>
+                    <div class="cert-org">Cisco Networking Academy</div>
+                    <span class="cert-status obtained">Obtenue</span>
                 </div>
             </div>
         </div>
@@ -2115,6 +2151,14 @@
                         <!-- Documents dynamiques -->
                     </div>
                 </div>
+
+                <!-- Actions & Documents Spécifiques -->
+                <div class="modal-section" id="modalActionsSection" style="display:none; border-top:1px solid var(--border); padding-top:20px; margin-top:10px;">
+                    <div class="modal-section-title">📂 Accès aux ressources</div>
+                    <div class="modal-buttons-area" id="modalActionsButtons">
+                        <!-- Buttons injected here -->
+                    </div>
+                </div>
             </div>
             
             <div class="modal-footer">
@@ -2135,486 +2179,8 @@
         // DONNÉES DES PROJETS
         // ═══════════════════════════════════════════
         const projectsData = {
-            "ocs-glpi": {
-                title: "Gestion de parc et support OCS-GLPI",
-                context: "Mise en place d'un outil d'inventaire automatisé et d'une plateforme de helpdesk pour l'agence GSB. Permet de recenser le matériel informatique et d'offrir un point d'entrée unique pour les demandes d'assistance.",
-                objectifs: [
-                    "Installer et configurer OCS Inventory pour l'inventaire réseau",
-                    "Déployer GLPI et le connecter à OCS",
-                    "Configurer les catégories de tickets et les workflows",
-                    "Former les utilisateurs à l'outil"
-                ],
-                realisation: [
-                    "Installation d'OCS Inventory NG sur serveur Linux",
-                    "Déploiement des agents sur les postes clients",
-                    "Configuration de GLPI avec plugins FusionInventory",
-                    "Création de catégories de tickets et règles de routage",
-                    "Documentation utilisateur et procédures de support"
-                ],
-                difficultes: "Gestion fine des droits utilisateurs pour affiner les accès selon les profils. Organisation hiérarchique des salles et entités dans GLPI pour une gestion granulaire.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" },
-                    { code: "F.0", label: "Organiser son développement professionnel", desc: "Mettre en place son environnement d'apprentissage" }
-                ],
-                documents: [
-                    { name: "Schema_architecture.pdf", type: "PDF", icon: "📄" },
-                    { name: "Capture_GLPI_tickets.png", type: "Image", icon: "🖼️" },
-                    { name: "Procedure_installation.md", type: "Doc", icon: "📝" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "23/09/2025 au 05/01/2026 — Lycée",
-                accent: "var(--gradient-1)",
-                link: "#"
-            },
-            
-            "active-directory": {
-                title: "Gestion centralisée des utilisateurs",
-                context: "Centralisation de la gestion des identités pour les nouveaux collaborateurs dans un contexte d'entreprise, issus de la fusion via l'Active Directory.",
-                objectifs: [
-                    "Installer et promouvoir un contrôleur de domaine AD DS",
-                    "Configurer le service DHCP avec étendues et réservations",
-                    "Créer et lier des GPO pour la gestion des postes",
-                    "Déployer WDS pour l'installation réseau de Windows"
-                ],
-                realisation: [
-                    "Promotion du serveur Windows Server 2019 en contrôleur de domaine",
-                    "Création des OU, groupes de sécurité et comptes utilisateurs",
-                    "Configuration des stratégies de groupe (mots de passe, bureau, restrictions)",
-                    "Déploiement de WDS avec options DHCP 60/66/67 pour PXE"
-                ],
-                difficultes: "La configuration de WDS avec un serveur DHCP existant a nécessité des options DHCP supplémentaires (options 60, 66, 67) et une attention particulière aux conflits de services.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" }
-                ],
-                documents: [
-                    { name: "Schema_AD.png", type: "Image", icon: "🖼️" },
-                    { name: "GPO_appliquees.pdf", type: "PDF", icon: "📄" },
-                    { name: "Script_creation_users.ps1", type: "Code", icon: "💻" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "23/09/2025 au 05/01/2026 — Lycée",
-                accent: "var(--gradient-4)",
-                link: "#"
-            },
-            
-            "nagios": {
-                title: "Supervision - NAGIOS",
-                context: "Déploiement d'une solution de surveillance pour monitorer l'état des équipements réseau et des serveurs des agences GSB. Configuration d'alertes automatiques pour anticiper les pannes.",
-                objectifs: [
-                    "Installer et configurer Nagios Core sur Linux",
-                    "Configurer les hôtes et services à superviser",
-                    "Paramétrer les notifications et escalades d'alertes",
-                    "Créer un dashboard de supervision"
-                ],
-                realisation: [
-                    "Installation de Nagios Core + plugins sur Debian",
-                    "Configuration des checks CPU, RAM, disque, services",
-                    "Mise en place des notifications email/SMS par seuils",
-                    "Création d'une vue personnalisée avec NagVis"
-                ],
-                difficultes: "La configuration des contacts et des périodes de notification dans Nagios Core est complexe. Documentation officielle insuffisante, recours aux forums communautaires pour les cas spécifiques.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" }
-                ],
-                documents: [
-                    { name: "Dashboard_Nagios.png", type: "Image", icon: "🖼️" },
-                    { name: "Config_hosts.cfg", type: "Code", icon: "💻" },
-                    { name: "Alertes_test.log", type: "Log", icon: "📋" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "23/09/2025 au 05/01/2026 — Lycée",
-                accent: "var(--gradient-3)",
-                link: "#"
-            },
-            
-            "haproxy": {
-                title: "Répartition de charge - HAPROXY",
-                context: "Mise en œuvre d'un répartiteur de charge pour les serveurs Web dans un contexte d'entreprise (GSB). L'objectif est de garantir un accès permanent aux ressources, même en cas de panne d'un serveur applicatif.",
-                objectifs: [
-                    "Installer et configurer HAProxy en mode reverse proxy",
-                    "Configurer l'équilibrage round-robin entre serveurs",
-                    "Mettre en place les health checks pour détecter les pannes",
-                    "Configurer la persistance de session si nécessaire"
-                ],
-                realisation: [
-                    "Installation d'HAProxy sur Debian/Ubuntu",
-                    "Configuration du frontend/backend avec ACLs",
-                    "Mise en place des checks HTTP pour la disponibilité",
-                    "Tests de basculement et monitoring des performances"
-                ],
-                difficultes: "Gestion de la persistance de session pour les applications stateful. Configuration fine des timeouts pour équilibrer réactivité et stabilité.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" },
-                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" }
-                ],
-                documents: [
-                    { name: "Config_haproxy.cfg", type: "Code", icon: "💻" },
-                    { name: "Schema_architecture.png", type: "Image", icon: "🖼️" },
-                    { name: "Tests_charge.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "23/09/2025 au 05/01/2026 — Lycée",
-                accent: "var(--gradient-5)",
-                link: "#"
-            },
-            
-            "ipfire": {
-                title: "Pare-feu - IPFIRE",
-                context: "Installation et configuration d'une solution de filtrage (type IPFire) pour sécuriser les agences. Mise en place de règles de flux (ACL) pour autoriser les applications métiers tout en protégeant le réseau local (LAN) et la zone publique (DMZ).",
-                objectifs: [
-                    "Installer IPFire et configurer les interfaces (GREEN/RED/ORANGE/BLUE)",
-                    "Définir les zones et politiques de sécurité",
-                    "Créer les règles de filtrage par ports et protocoles",
-                    "Activer et configurer Snort (IDS/IPS)"
-                ],
-                realisation: [
-                    "Installation d'IPFire sur machine dédiée/VM",
-                    "Configuration des zones réseau et NAT",
-                    "Création de règles firewall pour applications métiers",
-                    "Activation de Snort avec règles Emerging Threats",
-                    "Tests d'intrusion et ajustement des règles"
-                ],
-                difficultes: "La gestion des règles Snort génère de nombreux faux positifs. Nécessité d'affiner les règles et de créer des suppressions adaptées au contexte métier pour éviter le bruit.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" }
-                ],
-                documents: [
-                    { name: "Regles_firewall.pdf", type: "PDF", icon: "📄" },
-                    { name: "Capture_interface_IPFire.png", type: "Image", icon: "🖼️" },
-                    { name: "Rapport_Snort.log", type: "Log", icon: "📋" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "23/09/2025 au 05/01/2026 — Lycée",
-                accent: "var(--gradient-2)",
-                link: "#"
-            },
-            
-            "vlan-routage": {
-                title: "Infrastructure réseau et segmentation VLAN",
-                context: "Mise en œuvre d'une architecture réseau segmentée par VLAN pour isoler les services et configuration du routage dynamique (RIP) pour assurer la communication efficace entre les différents sous-réseaux.",
-                objectifs: [
-                    "Concevoir le plan d'adressage IPv4",
-                    "Configurer le routage inter-sites",
-                    "Mettre en place la sécurité des accès",
-                    "Documenter l'architecture complète"
-                ],
-                realisation: [
-                    "Plan d'adressage IPv4 avec subnetting optimisé",
-                    "Configuration des VLAN par service (Admin, Production, Invités)",
-                    "Mise en place du routage inter-VLAN via routeur Cisco",
-                    "Configuration du protocole RIP v2 pour le routage dynamique",
-                    "Documentation technique complète avec schémas"
-                ],
-                difficultes: "La conception du plan d'adressage pour accueillir la croissance future de l'entreprise a nécessité une réflexion sur le subnetting et la scalabilité.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" }
-                ],
-                documents: [
-                    { name: "Schema_VLAN.png", type: "Image", icon: "🖼️" },
-                    { name: "Config_routeurs.txt", type: "Code", icon: "💻" },
-                    { name: "Plan_adressage.xlsx", type: "Tableur", icon: "📊" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "15/09/2025 au 22/12/2025 — Lycée",
-                accent: "var(--gradient-3)",
-                link: "#"
-            },
-            
-            "hsrp": {
-                title: "Haute disponibilité passerelle (HSRP + RIP)",
-                context: "Projet d'infrastructure visant à éliminer les points de défaillance uniques au niveau de la passerelle réseau. Configuration du protocole de redondance HSRP sur les routeurs de tête.",
-                objectifs: [
-                    "Configurer HSRP pour la redondance de passerelle virtuelle",
-                    "Implémenter RIP v2 pour le routage dynamique",
-                    "Tester le basculement automatique (failover)",
-                    "Documenter les configurations"
-                ],
-                realisation: [
-                    "Configuration HSRP avec priorité et préemption",
-                    "Mise en place de RIP v2 avec authentification MD5",
-                    "Tests de basculement avec coupure simulée du routeur actif",
-                    "Monitoring des états HSRP via SNMP",
-                    "Documentation des procédures de maintenance"
-                ],
-                difficultes: "La synchronisation des états HSRP entre routeurs nécessite une attention particulière aux timers et à la priorité pour éviter les basculements intempestifs.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" }
-                ],
-                documents: [
-                    { name: "Config_HSRP.txt", type: "Code", icon: "💻" },
-                    { name: "Test_failover.png", type: "Image", icon: "🖼️" },
-                    { name: "Procedure_maintenance.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "15/09/2025 au 24/11/2025 — Lycée",
-                accent: "var(--gradient-4)",
-                link: "#"
-            },
-            
-            "gestion-parc-stage": {
-                title: "Gestion du parc informatique (PC et smartphones)",
-                context: "Assurer la préparation, l'attribution et le renouvellement des équipements informatiques (ordinateurs et téléphones) pour les salariés, en fonction de leur arrivée, départ ou changement de matériel.",
-                objectifs: [
-                    "Préparer les nouveaux postes pour les arrivées",
-                    "Récupérer et réinitialiser les équipements des départs",
-                    "Gérer les demandes de renouvellement matériel",
-                    "Maintenir un inventaire à jour"
-                ],
-                realisation: [
-                    "Imaging des postes avec outils de déploiement",
-                    "Configuration standardisée des environnements utilisateurs",
-                    "Procédure de récupération et sécurisation des données",
-                    "Mise à jour du fichier de suivi du parc",
-                    "Coordination avec le service RH pour les mouvements"
-                ],
-                difficultes: "Gestion des délais entre départ et arrivée pour optimiser le réemploi du matériel. Coordination avec plusieurs services pour les planning d'équipement.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" }
-                ],
-                documents: [
-                    { name: "Procedure_preparation_PC.pdf", type: "PDF", icon: "📄" },
-                    { name: "Fichier_suivi_parc.xlsx", type: "Tableur", icon: "📊" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
-                accent: "var(--gradient-1)",
-                link: "#"
-            },
-            
-            "inventaire-excel": {
-                title: "Suivi et inventaire du matériel (Excel)",
-                context: "Maintenir à jour un fichier de suivi (Excel) recensant les équipements attribués : nom des salariés, IMEI des téléphones, modèles et marques utilisés.",
-                objectifs: [
-                    "Créer un fichier de suivi structuré et fiable",
-                    "Recenser tous les équipements attribués",
-                    "Faciliter les audits et les renouvellements",
-                    "Assurer la traçabilité des attributions"
-                ],
-                realisation: [
-                    "Conception d'un tableau Excel avec onglets par type de matériel",
-                    "Mise en place de validations de données et listes déroulantes",
-                    "Formules de recherche pour croiser les informations",
-                    "Export PDF pour les rapports périodiques",
-                    "Formation des collègues à l'utilisation du fichier"
-                ],
-                difficultes: "Harmonisation des données provenant de sources différentes. Mise à jour en temps réel avec les mouvements de personnel.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" }
-                ],
-                documents: [
-                    { name: "Modele_suivi_parc.xlsx", type: "Tableur", icon: "📊" },
-                    { name: "Guide_utilisation.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
-                accent: "var(--gradient-2)",
-                link: "#"
-            },
-            
-            "lignes-mobiles": {
-                title: "Attribution et gestion des lignes mobiles",
-                context: "Attribuer des cartes SIM aux téléphones professionnels et veiller à leur bon fonctionnement selon les besoins des utilisateurs.",
-                objectifs: [
-                    "Attribuer les lignes selon les profils utilisateurs",
-                    "Configurer les options et forfaits adaptés",
-                    "Assurer le support en cas de problème de connexion",
-                    "Gérer les changements et résiliations"
-                ],
-                realisation: [
-                    "Analyse des besoins par service et par poste",
-                    "Commande et activation des cartes SIM auprès de l'opérateur",
-                    "Configuration APN et paramètres réseau sur les terminaux",
-                    "Création d'une FAQ pour les utilisateurs",
-                    "Suivi des consommations et alertes de dépassement"
-                ],
-                difficultes: "Gestion des zones à faible couverture réseau. Coordination avec l'opérateur pour les interventions techniques.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" }
-                ],
-                documents: [
-                    { name: "Grille_attribution_lignes.xlsx", type: "Tableur", icon: "📊" },
-                    { name: "FAQ_utilisateurs.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
-                accent: "var(--gradient-3)",
-                link: "#"
-            },
-            
-            "config-postes": {
-                title: "Configuration postes et outils de communication",
-                context: "Installer et paramétrer les logiciels essentiels, notamment la messagerie (Outlook avec protocoles SMTP/IMAP), afin de garantir un accès opérationnel aux services professionnels.",
-                objectifs: [
-                    "Installer les logiciels métiers et bureautiques",
-                    "Configurer la messagerie professionnelle",
-                    "Paramétrer les accès réseau et VPN",
-                    "Former les utilisateurs aux nouveaux outils"
-                ],
-                realisation: [
-                    "Déploiement automatisé via scripts ou GPO",
-                    "Configuration Outlook avec authentification moderne",
-                    "Paramétrage des imprimantes réseau et périphériques",
-                    "Tests de connectivité et validation fonctionnelle",
-                    "Création de guides de prise en main"
-                ],
-                difficultes: "Compatibilité des anciens logiciels avec les nouveaux systèmes. Gestion des droits d'administration locaux.",
-                competences: [
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" }
-                ],
-                documents: [
-                    { name: "Checklist_installation.pdf", type: "PDF", icon: "📄" },
-                    { name: "Config_Outlook.png", type: "Image", icon: "🖼️" },
-                    { name: "Guide_utilisateur.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
-                accent: "var(--gradient-4)",
-                link: "#"
-            },
-            
-            "redundance-cisco": {
-                title: "Redondance passerelle Cisco (HSRP, RIP)",
-                context: "Mise en place de redondance de passerelle Cisco pour assurer la continuité de service en cas de défaillance matérielle d'un routeur.",
-                objectifs: [
-                    "Configurer HSRP pour la redondance de passerelle",
-                    "Implémenter le routage dynamique RIP",
-                    "Tester les scénarios de basculement",
-                    "Documenter la configuration"
-                ],
-                realisation: [
-                    "Configuration HSRP avec priorités et préemption",
-                    "Mise en place de RIP v2 avec authentification",
-                    "Tests de coupure et validation du failover",
-                    "Monitoring via SNMP et logs",
-                    "Documentation technique et procédures"
-                ],
-                difficultes: "Synchronisation des états HSRP et gestion des timers pour éviter les basculements intempestifs.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "F.0", label: "Organiser son développement professionnel", desc: "Mettre en place son environnement d'apprentissage" }
-                ],
-                documents: [
-                    { name: "Config_Cisco_HSRP.txt", type: "Code", icon: "💻" },
-                    { name: "Schema_redundance.png", type: "Image", icon: "🖼️" },
-                    { name: "Rapport_tests.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "06/01/2025 au 03/02/2025 — Lycée",
-                accent: "var(--gradient-5)",
-                link: "#"
-            },
-            
-            "veille-techno": {
-                title: "Veille Technologique - Journal",
-                context: "Projet transversal liant veille informationnelle, présence en ligne et développement professionnel. Rédaction d'articles de vulgarisation technique.",
-                objectifs: [
-                    "Mettre en place une veille informationnelle sur l'actualité IT",
-                    "Rédiger des articles de vulgarisation technique",
-                    "Gérer et animer une présence numérique",
-                    "Développer ses compétences en communication"
-                ],
-                realisation: [
-                    "Sélection de sources fiables (RSS, newsletters, forums)",
-                    "Rédaction d'articles hebdomadaires sur des sujets IT",
-                    "Publication sur plateforme de blog ou réseau professionnel",
-                    "Interaction avec la communauté et retours d'expérience",
-                    "Analyse des statistiques de lecture et engagement"
-                ],
-                difficultes: "Trouver le bon niveau de vulgarisation pour rendre les sujets techniques accessibles à tous les lecteurs.",
-                competences: [
-                    { code: "F.0", label: "Organiser son développement professionnel", desc: "Mettre en place son environnement d'apprentissage personnel" }
-                ],
-                documents: [
-                    { name: "Liste_sources_veille.pdf", type: "PDF", icon: "📄" },
-                    { name: "Article_exemple.md", type: "Doc", icon: "📝" },
-                    { name: "Statistiques_lecture.png", type: "Image", icon: "🖼️" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "19/06/2024 au 16/01/2025 — Lycée",
-                accent: "var(--gradient-6)",
-                link: "#"
-            },
-            
-            "css-zen": {
-                title: "CSS Zen Garden",
-                context: "Projet de design web avancé : modifier uniquement le CSS d'une page HTML fixe pour en transformer radicalement l'apparence.",
-                objectifs: [
-                    "Maîtriser les animations et transitions CSS",
-                    "Utiliser les propriétés CSS Grid et Flexbox avancées",
-                    "Créer un design original et cohérent",
-                    "Respecter les contraintes techniques imposées"
-                ],
-                realisation: [
-                    "Analyse de la structure HTML fournie",
-                    "Création d'une charte graphique originale",
-                    "Implémentation de layouts complexes avec Grid/Flexbox",
-                    "Ajout d'animations et transitions fluides",
-                    "Optimisation pour le responsive et l'accessibilité"
-                ],
-                difficultes: "La contrainte de ne pas modifier le HTML a imposé une réflexion poussée sur les sélecteurs CSS et la structure existante.",
-                competences: [
-                    { code: "E.0", label: "Développer la présence en ligne", desc: "Concevoir et développer des contenus web" },
-                    { code: "F.0", label: "Organiser son développement professionnel", desc: "Mettre en place son environnement d'apprentissage" }
-                ],
-                documents: [
-                    { name: "Design_final.png", type: "Image", icon: "🖼️" },
-                    { name: "styles.css", type: "Code", icon: "💻" },
-                    { name: "Note_concept.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "07/11/2024 au 19/12/2024 — Lycée",
-                accent: "var(--gradient-1)",
-                link: "#"
-            },
-            
-            "tecksio": {
-                title: "Infrastructure Réseau Entreprise TeckSio",
-                context: "Projet de simulation d'architecture réseau d'entreprise dans un contexte pédagogique avec Cisco Packet Tracer.",
-                objectifs: [
-                    "Concevoir le plan d'adressage IPv4",
-                    "Configurer le routage inter-sites",
-                    "Mettre en place la sécurité des accès",
-                    "Documenter l'architecture complète"
-                ],
-                realisation: [
-                    "Modélisation de l'architecture dans Packet Tracer",
-                    "Plan d'adressage avec VLAN et sous-réseaux",
-                    "Configuration du routage OSPF entre sites",
-                    "Mise en place d'ACL pour la sécurité",
-                    "Documentation technique avec schémas et procédures"
-                ],
-                difficultes: "La conception du plan d'adressage pour accueillir la croissance future de l'entreprise a nécessité une réflexion sur le subnetting et la scalabilité.",
-                competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
-                    { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" }
-                ],
-                documents: [
-                    { name: "Architecture_PacketTracer.pkt", type: "Fichier", icon: "📦" },
-                    { name: "Schema_reseau.png", type: "Image", icon: "🖼️" },
-                    { name: "Documentation.pdf", type: "PDF", icon: "📄" },
-                    { name: "Ajouter...", type: "upload", icon: "➕" }
-                ],
-                date: "14/11/2024 au 19/12/2024 — Lycée",
-                accent: "var(--gradient-3)",
-                link: "#"
-            },
-            
             "site-html-pub": {
-                title: "RP 1.1 - Site HTML \"Publicité\"",
+                title: "RP 1.1 - Site HTML \"Publicité\" (SavoryCraft)",
                 context: "Création d'un site web (HTML et CSS) avec intégration d'espaces publicitaires. Travail sur la structure sémantique, le responsive et l'accessibilité.",
                 objectifs: [
                     "Créer une structure HTML sémantique et valide",
@@ -2631,8 +2197,8 @@
                 ],
                 difficultes: "Équilibrer l'intégration publicitaire avec l'expérience utilisateur et les performances de chargement.",
                 competences: [
-                    { code: "E.0", label: "Développer la présence en ligne", desc: "Concevoir et développer des contenus web" },
-                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" }
+                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" },
+                    { code: "E.0", label: "Développer la présence en ligne", desc: "Concevoir et développer des contenus web" }
                 ],
                 documents: [
                     { name: "Maquette_Figma.png", type: "Image", icon: "🖼️" },
@@ -2642,40 +2208,54 @@
                 ],
                 date: "12/09/2024 au 07/11/2024 — Lycée",
                 accent: "var(--gradient-2)",
-                link: "#"
+                link: "#",
+                // Boutons spécifiques pour SavoryCraft
+                buttons: [
+                    { label: "Voir le site", icon: "🌐", href: "https://savorycraft.example.com", target: "_blank", primary: true },
+                    { label: "Documentation projet", icon: "📄", href: "documents/savorycraft/docs-projet.pdf", target: "_blank" },
+                    { label: "Présentation PowerPoint", icon: "📊", href: "documents/savorycraft/presentation.pptx", target: "_blank" }
+                ]
             },
-            
-            "assistance-personnels": {
-                title: "Assistance aux personnels",
-                context: "Résolution de problèmes (PC, imprimantes, configuration de PC et téléphone). Support utilisateur niveau 1, diagnostic et dépannage matériel/logiciel.",
+
+            "config-postes": {
+                title: "Configuration des postes de travail",
+                context: "Installer et paramétrer les logiciels essentiels, notamment la messagerie (Outlook avec protocoles SMTP/IMAP), afin de garantir un accès opérationnel aux services professionnels.",
                 objectifs: [
-                    "Diagnostiquer rapidement les incidents signalés",
-                    "Résoudre les problèmes courants de poste de travail",
-                    "Orienter vers le niveau 2 si nécessaire",
-                    "Documenter les solutions pour la base de connaissances"
+                    "Installer les logiciels métiers et bureautiques",
+                    "Configurer la messagerie professionnelle",
+                    "Paramétrer les accès réseau et VPN",
+                    "Former les utilisateurs aux nouveaux outils"
                 ],
                 realisation: [
-                    "Accueil et qualification des demandes utilisateurs",
-                    "Diagnostic à distance ou en présentiel",
-                    "Résolution : réinstallation, configuration, dépannage matériel",
-                    "Rédaction de fiches solutions réutilisables",
-                    "Suivi de la satisfaction utilisateur"
+                    "Déploiement automatisé via scripts ou GPO",
+                    "Configuration Outlook avec authentification moderne",
+                    "Paramétrage des imprimantes réseau et périphériques",
+                    "Tests de connectivité et validation fonctionnelle",
+                    "Création de guides de prise en main"
                 ],
-                difficultes: "Gestion des demandes urgentes en parallèle. Communication avec des utilisateurs non-techniciens.",
+                difficultes: "Compatibilité des anciens logiciels avec les nouveaux systèmes. Gestion des droits d'administration locaux.",
                 competences: [
+                    { code: "A.5", label: "Gérer le patrimoine", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
                     { code: "B.0", label: "Répondre aux incidents", desc: "Collecter, suivre et orienter des demandes" },
-                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" }
+                    { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" },
+                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" }
                 ],
                 documents: [
-                    { name: "Fiche_solution_imprimante.pdf", type: "PDF", icon: "📄" },
-                    { name: "Checklist_diagnostic.pdf", type: "PDF", icon: "📄" },
+                    { name: "Checklist_installation.pdf", type: "PDF", icon: "📄" },
+                    { name: "Config_Outlook.png", type: "Image", icon: "🖼️" },
+                    { name: "Guide_utilisateur.pdf", type: "PDF", icon: "📄" },
                     { name: "Ajouter...", type: "upload", icon: "➕" }
                 ],
-                date: "19/05/2024 au 27/06/2024 — Stage entreprise",
+                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
                 accent: "var(--gradient-4)",
-                link: "#"
+                link: "#",
+                // Boutons spécifiques pour Config Postes
+                buttons: [
+                    { label: "Documentation stage", icon: "📄", href: "documents/stage1/docs-stage.pdf", target: "_blank" },
+                    { label: "Présentation PowerPoint", icon: "📊", href: "documents/stage1/presentation.pptx", target: "_blank", primary: true }
+                ]
             },
-            
+
             "linux-entreprise": {
                 title: "Évaluation distributions Linux pour entreprise",
                 context: "Étude et test de plusieurs distributions Linux pour identifier celle pouvant remplacer Windows dans l'environnement de l'entreprise. Compatibilité, virtualisation, alternatives Microsoft, agents de sécurité.",
@@ -2696,47 +2276,264 @@
                 ],
                 difficultes: "Faire fonctionner toutes les applications Windows .exe et développements internes (WinDev) malgré Wine et PlayOnLinux. Compatibilité des agents de sécurité avec certaines distributions.",
                 competences: [
-                    { code: "A.5", label: "Gérer le patrimoine informatique", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
+                    { code: "A.5", label: "Gérer le patrimoine", desc: "Vérifier le respect des règles d'utilisation des ressources numériques" },
                     { code: "D.0", label: "Travailler en mode projet", desc: "Analyser les objectifs et les modalités d'organisation d'un projet" },
-                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" }
+                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" },
+                    { code: "F.0", label: "Organiser son dev pro", desc: "Mettre en place son environnement d'apprentissage personnel" }
                 ],
                 documents: [
-                  { name: "Présentation ", type: "PDF", icon: "📄", href: "documents/Presentation_ZORIN_OS_18.pdf" },
-                    { name: "Test_compatibilite_apps.xlsx", type: "Tableur", icon: "📊", href: "documents/Test_compatibilite_apps.xlsx" },
-                    { name: "Procedure_installation_agents.md", type: "Doc", icon: "📝", href: "documents/Procedure_installation_agents.md" },
-                    { name: "Capture_bureau_Ubuntu.png", type: "Image", icon: "🖼️", href: "documents/Capture_bureau_Ubuntu.png" },
+                    { name: "Rapport_comparatif_Linux.pdf", type: "PDF", icon: "📄" },
+                    { name: "Test_compatibilite_apps.xlsx", type: "Tableur", icon: "📊" },
+                    { name: "Procedure_installation_agents.md", type: "Doc", icon: "📝" },
+                    { name: "Capture_bureau_Ubuntu.png", type: "Image", icon: "🖼️" },
+                    { name: "Ajouter...", type: "upload", icon: "➕" }
                 ],
                 date: "23/02/2026 au 03/04/2026 — Stage entreprise",
                 accent: "var(--gradient-5)",
-                link: "#"
+                link: "#",
+                // Boutons spécifiques pour Linux
+                buttons: [
+                    { label: "Présentation PowerPoint", icon: "📊", href: "documents/linux/presentation.pptx", target: "_blank", primary: true },
+                    { label: "Documentation technique", icon: "📝", href: "documents/linux/docs-tech.pdf", target: "_blank" }
+                ]
             },
-            
-            "modes-operatoires": {
-                title: "Réalisation de modes opératoires",
-                context: "Création de guides utilisateurs : nettoyage de messagerie, gestion de l'espace disque, bonnes pratiques numériques. Documentation pédagogique pour les collaborateurs.",
-                objectifs: [
-                    "Identifier les besoins de documentation des utilisateurs",
-                    "Rédiger des guides clairs et illustrés",
-                    "Valider la compréhension avec des tests utilisateurs",
-                    "Diffuser et maintenir à jour la documentation"
-                ],
-                realisation: [
-                    "Recueil des besoins auprès des services",
-                    "Rédaction des modes opératoires avec captures d'écran",
-                    "Mise en forme professionnelle (PDF, intranet)",
-                    "Tests de compréhension avec utilisateurs pilotes",
-                    "Mise en ligne et communication sur la disponibilité"
-                ],
-                difficultes: "Adapter le niveau de détail pour être complet sans être trop technique. Maintenir la documentation à jour avec les évolutions logicielles.",
+
+            // Autres projets conservés pour le portfolio...
+            "ocs-glpi": {
+                title: "Gestion de parc et support OCS-GLPI",
+                context: "Mise en place d'un outil d'inventaire automatisé et d'une plateforme de helpdesk pour l'agence GSB. Permet de recenser le matériel informatique et d'offrir un point d'entrée unique pour les demandes d'assistance.",
+                objectifs: ["Installer et configurer OCS Inventory pour l'inventaire réseau", "Déployer GLPI et le connecter à OCS", "Configurer les catégories de tickets et les workflows", "Former les utilisateurs à l'outil"],
+                realisation: ["Installation d'OCS Inventory NG sur serveur Linux", "Déploiement des agents sur les postes clients", "Configuration de GLPI avec plugins FusionInventory", "Création de catégories de tickets et règles de routage"],
+                difficultes: "Gestion fine des droits utilisateurs pour affiner les accès selon les profils.",
                 competences: [
-                    { code: "C.0", label: "Mettre à disposition un service", desc: "Assurer la disponibilité des services informatiques" }
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" },
+                    { code: "C.0", label: "Mettre à disposition un service" },
+                    { code: "F.0", label: "Organiser son développement professionnel" }
                 ],
                 documents: [
-                    { name: "Mode_operatoire_messagerie.pdf", type: "PDF", icon: "📄" },
-                    { name: "Guide_gestion_disque.pdf", type: "PDF", icon: "📄" },
-                    { name: "Template_documentation.docx", type: "Doc", icon: "📝" },
+                    { name: "Schema_architecture.pdf", type: "PDF", icon: "📄" },
+                    { name: "Capture_GLPI_tickets.png", type: "Image", icon: "🖼️" },
                     { name: "Ajouter...", type: "upload", icon: "➕" }
                 ],
+                date: "23/09/2025 au 05/01/2026 — Lycée",
+                accent: "var(--gradient-1)",
+                link: "#"
+            },
+            "active-directory": {
+                title: "Gestion centralisée des utilisateurs",
+                context: "Centralisation de la gestion des identités pour les nouveaux collaborateurs dans un contexte d'entreprise, issus de la fusion via l'Active Directory.",
+                objectifs: ["Installer et promouvoir un contrôleur de domaine AD DS", "Configurer le service DHCP avec étendues et réservations", "Créer et lier des GPO pour la gestion des postes", "Déployer WDS pour l'installation réseau de Windows"],
+                realisation: ["Promotion du serveur Windows Server 2019 en contrôleur de domaine", "Création des OU, groupes de sécurité et comptes utilisateurs", "Configuration des stratégies de groupe (mots de passe, bureau, restrictions)"],
+                difficultes: "La configuration de WDS avec un serveur DHCP existant a nécessité des options DHCP supplémentaires (options 60, 66, 67).",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" },
+                    { code: "C.0", label: "Mettre à disposition un service" }
+                ],
+                documents: [{ name: "Schema_AD.png", type: "Image", icon: "🖼️" }, { name: "GPO_appliquees.pdf", type: "PDF", icon: "📄" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "23/09/2025 au 05/01/2026 — Lycée",
+                accent: "var(--gradient-4)",
+                link: "#"
+            },
+            "nagios": {
+                title: "Supervision - NAGIOS",
+                context: "Déploiement d'une solution de surveillance pour monitorer l'état des équipements réseau et des serveurs des agences GSB. Configuration d'alertes automatiques pour anticiper les pannes.",
+                objectifs: ["Installer et configurer Nagios Core sur Linux", "Configurer les hôtes et services à superviser", "Paramétrer les notifications et escalades d'alertes", "Créer un dashboard de supervision"],
+                realisation: ["Installation de Nagios Core + plugins sur Debian", "Configuration des checks CPU, RAM, disque, services", "Mise en place des notifications email/SMS par seuils"],
+                difficultes: "La configuration des contacts et des périodes de notification dans Nagios Core est complexe.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" },
+                    { code: "D.0", label: "Travailler en mode projet" }
+                ],
+                documents: [{ name: "Dashboard_Nagios.png", type: "Image", icon: "🖼️" }, { name: "Config_hosts.cfg", type: "Code", icon: "💻" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "23/09/2025 au 05/01/2026 — Lycée",
+                accent: "var(--gradient-3)",
+                link: "#"
+            },
+            "haproxy": {
+                title: "Répartition de charge - HAPROXY",
+                context: "Mise en œuvre d'un répartiteur de charge pour les serveurs Web dans un contexte d'entreprise (GSB). L'objectif est de garantir un accès permanent aux ressources, même en cas de panne d'un serveur applicatif.",
+                objectifs: ["Installer et configurer HAProxy en mode reverse proxy", "Configurer l'équilibrage round-robin entre serveurs", "Mettre en place les health checks pour détecter les pannes"],
+                realisation: ["Installation d'HAProxy sur Debian/Ubuntu", "Configuration du frontend/backend avec ACLs", "Mise en place des checks HTTP pour la disponibilité"],
+                difficultes: "Gestion de la persistance de session pour les applications stateful.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "D.0", label: "Travailler en mode projet" },
+                    { code: "C.0", label: "Mettre à disposition un service" }
+                ],
+                documents: [{ name: "Config_haproxy.cfg", type: "Code", icon: "💻" }, { name: "Schema_architecture.png", type: "Image", icon: "🖼️" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "23/09/2025 au 05/01/2026 — Lycée",
+                accent: "var(--gradient-5)",
+                link: "#"
+            },
+            "ipfire": {
+                title: "Pare-feu - IPFIRE",
+                context: "Installation et configuration d'une solution de filtrage (type IPFire) pour sécuriser les agences. Mise en place de règles de flux (ACL) pour autoriser les applications métiers tout en protégeant le réseau local (LAN) et la zone publique (DMZ).",
+                objectifs: ["Installer IPFire et configurer les interfaces", "Définir les zones et politiques de sécurité", "Créer les règles de filtrage par ports et protocoles", "Activer et configurer Snort"],
+                realisation: ["Installation d'IPFire sur machine dédiée/VM", "Configuration des zones réseau et NAT", "Création de règles firewall pour applications métiers"],
+                difficultes: "La gestion des règles Snort génère de nombreux faux positifs.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" }
+                ],
+                documents: [{ name: "Regles_firewall.pdf", type: "PDF", icon: "📄" }, { name: "Capture_interface_IPFire.png", type: "Image", icon: "🖼️" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "23/09/2025 au 05/01/2026 — Lycée",
+                accent: "var(--gradient-2)",
+                link: "#"
+            },
+            "vlan-routage": {
+                title: "Infrastructure réseau et segmentation VLAN",
+                context: "Mise en œuvre d'une architecture réseau segmentée par VLAN pour isoler les services et configuration du routage dynamique (RIP) pour assurer la communication efficace entre les différents sous-réseaux.",
+                objectifs: ["Concevoir le plan d'adressage IPv4", "Configurer le routage inter-sites", "Mettre en place la sécurité des accès", "Documenter l'architecture complète"],
+                realisation: ["Plan d'adressage IPv4 avec subnetting optimisé", "Configuration des VLAN par service", "Mise en place du routage inter-VLAN via routeur Cisco"],
+                difficultes: "La conception du plan d'adressage pour accueillir la croissance future de l'entreprise.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" }
+                ],
+                documents: [{ name: "Schema_VLAN.png", type: "Image", icon: "🖼️" }, { name: "Config_routeurs.txt", type: "Code", icon: "💻" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "15/09/2025 au 22/12/2025 — Lycée",
+                accent: "var(--gradient-3)",
+                link: "#"
+            },
+            "hsrp": {
+                title: "Haute disponibilité passerelle (HSRP + RIP)",
+                context: "Projet d'infrastructure visant à éliminer les points de défaillance uniques au niveau de la passerelle réseau. Configuration du protocole de redondance HSRP sur les routeurs de tête.",
+                objectifs: ["Configurer HSRP pour la redondance de passerelle virtuelle", "Implémenter RIP v2 pour le routage dynamique", "Tester le basculement automatique", "Documenter les configurations"],
+                realisation: ["Configuration HSRP avec priorité et préemption", "Mise en place de RIP v2 avec authentification MD5", "Tests de basculement avec coupure simulée"],
+                difficultes: "La synchronisation des états HSRP entre routeurs nécessite une attention particulière aux timers.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "D.0", label: "Travailler en mode projet" }
+                ],
+                documents: [{ name: "Config_HSRP.txt", type: "Code", icon: "💻" }, { name: "Test_failover.png", type: "Image", icon: "🖼️" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "15/09/2025 au 24/11/2025 — Lycée",
+                accent: "var(--gradient-4)",
+                link: "#"
+            },
+            "gestion-parc-stage": {
+                title: "Gestion du parc informatique (PC et smartphones)",
+                context: "Assurer la préparation, l'attribution et le renouvellement des équipements informatiques (ordinateurs et téléphones) pour les salariés, en fonction de leur arrivée, départ ou changement de matériel.",
+                objectifs: ["Préparer les nouveaux postes pour les arrivées", "Récupérer et réinitialiser les équipements des départs", "Gérer les demandes de renouvellement matériel", "Maintenir un inventaire à jour"],
+                realisation: ["Imaging des postes avec outils de déploiement", "Configuration standardisée des environnements utilisateurs", "Mise à jour du fichier de suivi du parc"],
+                difficultes: "Gestion des délais entre départ et arrivée pour optimiser le réemploi du matériel.",
+                competences: [{ code: "A.5", label: "Gérer le patrimoine informatique" }],
+                documents: [{ name: "Procedure_preparation_PC.pdf", type: "PDF", icon: "📄" }, { name: "Fichier_suivi_parc.xlsx", type: "Tableur", icon: "📊" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
+                accent: "var(--gradient-1)",
+                link: "#"
+            },
+            "inventaire-excel": {
+                title: "Suivi et inventaire du matériel (Excel)",
+                context: "Maintenir à jour un fichier de suivi (Excel) recensant les équipements attribués : nom des salariés, IMEI des téléphones, modèles et marques utilisés.",
+                objectifs: ["Créer un fichier de suivi structuré et fiable", "Recenser tous les équipements attribués", "Faciliter les audits et les renouvellements", "Assurer la traçabilité des attributions"],
+                realisation: ["Conception d'un tableau Excel avec onglets par type de matériel", "Mise en place de validations de données", "Formules de recherche pour croiser les informations"],
+                difficultes: "Harmonisation des données provenant de sources différentes.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" }
+                ],
+                documents: [{ name: "Modele_suivi_parc.xlsx", type: "Tableur", icon: "📊" }, { name: "Guide_utilisation.pdf", type: "PDF", icon: "📄" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
+                accent: "var(--gradient-2)",
+                link: "#"
+            },
+            "lignes-mobiles": {
+                title: "Attribution et gestion des lignes mobiles",
+                context: "Attribuer des cartes SIM aux téléphones professionnels et veiller à leur bon fonctionnement selon les besoins des utilisateurs.",
+                objectifs: ["Attribuer les lignes selon les profils utilisateurs", "Configurer les options et forfaits adaptés", "Assurer le support en cas de problème de connexion"],
+                realisation: ["Analyse des besoins par service et par poste", "Commande et activation des cartes SIM", "Configuration APN et paramètres réseau"],
+                difficultes: "Gestion des zones à faible couverture réseau.",
+                competences: [{ code: "A.5", label: "Gérer le patrimoine informatique" }],
+                documents: [{ name: "Grille_attribution_lignes.xlsx", type: "Tableur", icon: "📊" }, { name: "FAQ_utilisateurs.pdf", type: "PDF", icon: "📄" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "19/05/2025 au 27/06/2025 — Stage entreprise",
+                accent: "var(--gradient-3)",
+                link: "#"
+            },
+            "redundance-cisco": {
+                title: "Redondance passerelle Cisco (HSRP, RIP)",
+                context: "Mise en place de redondance de passerelle Cisco pour assurer la continuité de service en cas de défaillance matérielle d'un routeur.",
+                objectifs: ["Configurer HSRP pour la redondance de passerelle", "Implémenter le routage dynamique RIP", "Tester les scénarios de basculement"],
+                realisation: ["Configuration HSRP avec priorités et préemption", "Mise en place de RIP v2 avec authentification", "Tests de coupure et validation du failover"],
+                difficultes: "Synchronisation des états HSRP et gestion des timers.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" },
+                    { code: "F.0", label: "Organiser son développement professionnel" }
+                ],
+                documents: [{ name: "Config_Cisco_HSRP.txt", type: "Code", icon: "💻" }, { name: "Schema_redundance.png", type: "Image", icon: "🖼️" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "06/01/2025 au 03/02/2025 — Lycée",
+                accent: "var(--gradient-5)",
+                link: "#"
+            },
+            "veille-techno": {
+                title: "Veille Technologique - Journal",
+                context: "Projet transversal liant veille informationnelle, présence en ligne et développement professionnel. Rédaction d'articles de vulgarisation technique.",
+                objectifs: ["Mettre en place une veille informationnelle sur l'actualité IT", "Rédiger des articles de vulgarisation technique", "Gérer et animer une présence numérique"],
+                realisation: ["Sélection de sources fiables", "Rédaction d'articles hebdomadaires sur des sujets IT", "Publication sur plateforme de blog"],
+                difficultes: "Trouver le bon niveau de vulgarisation.",
+                competences: [{ code: "F.0", label: "Organiser son développement professionnel" }],
+                documents: [{ name: "Liste_sources_veille.pdf", type: "PDF", icon: "📄" }, { name: "Article_exemple.md", type: "Doc", icon: "📝" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "19/06/2024 au 16/01/2025 — Lycée",
+                accent: "var(--gradient-6)",
+                link: "#"
+            },
+            "css-zen": {
+                title: "CSS Zen Garden",
+                context: "Projet de design web avancé : modifier uniquement le CSS d'une page HTML fixe pour en transformer radicalement l'apparence.",
+                objectifs: ["Maîtriser les animations et transitions CSS", "Utiliser les propriétés CSS Grid et Flexbox avancées", "Créer un design original et cohérent"],
+                realisation: ["Analyse de la structure HTML fournie", "Implémentation de layouts complexes avec Grid/Flexbox", "Ajout d'animations et transitions fluides"],
+                difficultes: "La contrainte de ne pas modifier le HTML a imposé une réflexion poussée sur les sélecteurs CSS.",
+                competences: [
+                    { code: "E.0", label: "Développer la présence en ligne" },
+                    { code: "F.0", label: "Organiser son développement professionnel" }
+                ],
+                documents: [{ name: "Design_final.png", type: "Image", icon: "🖼️" }, { name: "styles.css", type: "Code", icon: "💻" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "07/11/2024 au 19/12/2024 — Lycée",
+                accent: "var(--gradient-1)",
+                link: "#"
+            },
+            "tecksio": {
+                title: "Infrastructure Réseau Entreprise TeckSio",
+                context: "Projet de simulation d'architecture réseau d'entreprise dans un contexte pédagogique avec Cisco Packet Tracer.",
+                objectifs: ["Concevoir le plan d'adressage IPv4", "Configurer le routage inter-sites", "Mettre en place la sécurité des accès"],
+                realisation: ["Modélisation de l'architecture dans Packet Tracer", "Plan d'adressage avec VLAN et sous-réseaux", "Configuration du routage OSPF entre sites"],
+                difficultes: "La conception du plan d'adressage pour accueillir la croissance future.",
+                competences: [
+                    { code: "A.5", label: "Gérer le patrimoine informatique" },
+                    { code: "B.0", label: "Répondre aux incidents" },
+                    { code: "D.0", label: "Travailler en mode projet" }
+                ],
+                documents: [{ name: "Architecture_PacketTracer.pkt", type: "Fichier", icon: "📦" }, { name: "Schema_reseau.png", type: "Image", icon: "🖼️" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "14/11/2024 au 19/12/2024 — Lycée",
+                accent: "var(--gradient-3)",
+                link: "#"
+            },
+            "assistance-personnels": {
+                title: "Assistance aux personnels",
+                context: "Résolution de problèmes (PC, imprimantes, configuration de PC et téléphone). Support utilisateur niveau 1, diagnostic et dépannage matériel/logiciel.",
+                objectifs: ["Diagnostiquer rapidement les incidents signalés", "Résoudre les problèmes courants de poste de travail", "Orienter vers le niveau 2 si nécessaire"],
+                realisation: ["Accueil et qualification des demandes utilisateurs", "Résolution : réinstallation, configuration", "Rédaction de fiches solutions réutilisables"],
+                difficultes: "Gestion des demandes urgentes en parallèle.",
+                competences: [
+                    { code: "B.0", label: "Répondre aux incidents" },
+                    { code: "D.0", label: "Travailler en mode projet" }
+                ],
+                documents: [{ name: "Fiche_solution_imprimante.pdf", type: "PDF", icon: "📄" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
+                date: "19/05/2024 au 27/06/2024 — Stage entreprise",
+                accent: "var(--gradient-4)",
+                link: "#"
+            },
+            "modes-operatoires": {
+                title: "Réalisation de modes opératoires",
+                context: "Création de guides utilisateurs : nettoyage de messagerie, gestion de l'espace disque, bonnes pratiques numériques.",
+                objectifs: ["Identifier les besoins de documentation", "Rédiger des guides clairs et illustrés", "Diffuser et maintenir à jour la documentation"],
+                realisation: ["Recueil des besoins", "Rédaction des modes opératoires avec captures", "Mise en forme professionnelle"],
+                difficultes: "Adapter le niveau de détail pour être complet sans être trop technique.",
+                competences: [{ code: "C.0", label: "Mettre à disposition un service" }],
+                documents: [{ name: "Mode_operatoire_messagerie.pdf", type: "PDF", icon: "📄" }, { name: "Guide_gestion_disque.pdf", type: "PDF", icon: "📄" }, { name: "Ajouter...", type: "upload", icon: "➕" }],
                 date: "23/02/2026 au 03/04/2026 — Stage entreprise",
                 accent: "var(--gradient-6)",
                 link: "#"
@@ -2746,7 +2543,6 @@
         // ═══════════════════════════════════════════
         // GESTION DES MODALES PROJETS
         // ═══════════════════════════════════════════
-
         function openProjectModal(projectId) {
             const project = projectsData[projectId];
             if (!project) return;
@@ -2765,7 +2561,7 @@
             document.getElementById('modalDifficultes').textContent = project.difficultes;
             
             const competencesHtml = project.competences.map(c => 
-                `<div class="competence-tag" title="${c.desc}">
+                `<div class="competence-tag" title="${c.desc || ''}">
                     <span class="code">${c.code}</span>
                     <span>${c.label}</span>
                 </div>`
@@ -2786,6 +2582,21 @@
                 </div>`;
             }).join('');
             document.getElementById('modalDocuments').innerHTML = documentsHtml;
+            
+            // Affichage des boutons spécifiques (Site, PPT, Docs)
+            const actSection = document.getElementById('modalActionsSection');
+            const btnsContainer = document.getElementById('modalActionsButtons');
+            if (project.buttons && project.buttons.length > 0) {
+                actSection.style.display = 'block';
+                btnsContainer.innerHTML = project.buttons.map(btn => 
+                    `<a href="${btn.href}" target="${btn.target || '_blank'}" class="modal-btn-doc ${btn.primary ? 'primary' : ''}">
+                        ${btn.icon} ${btn.label}
+                    </a>`
+                ).join('');
+            } else {
+                actSection.style.display = 'none';
+                btnsContainer.innerHTML = '';
+            }
             
             document.getElementById('modalDate').textContent = project.date;
             const linkBtn = document.getElementById('modalLink');
@@ -2830,7 +2641,6 @@
         // ═══════════════════════════════════════════
         // SCRIPTS EXISTANTS
         // ═══════════════════════════════════════════
-
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
